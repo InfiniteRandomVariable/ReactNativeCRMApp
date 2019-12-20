@@ -10,6 +10,20 @@ Will use native environment React Hooks for its cache data instead of Redux. Les
 Lays out the structure of the app. 
 Use Flow to make each variable to have strong type. 
 Various tools are used to ensure code correctness such as ELint and etc.
+ 
+
+The style of the app is component based. To see the read-to-show code example, 
+Go to:
+
+ReactNativeCRMApp/src/screens/sale/ReportSales
+ReactNativeCRMApp/src/screens/sale/AddItem
+ReactNativeCRMApp/src/screens/sale/AddInventory
+ReactNativeCRMApp/src/screens/sale/reviewItems
+ReactNativeCRMApp/src/screens/inventory/createItem
+ReactNativeCRMApp/src/screens/saleAndInventory
+
+
+
 The published documents/code are by no mean complete or reflect the latest development of this app.
 
 Utilized: React Native, AWS Serverless Stacks such as DynamoDB, Lambda.
