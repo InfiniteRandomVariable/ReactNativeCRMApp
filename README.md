@@ -7,15 +7,15 @@ This code supports login/signup while decouples the dependence on Facebook for u
 Compatible to AWS DynamoDB (NoSQL) and AWS Serverless framework.
 The NOSQL data structure supports fast analysis of data without joints.
 Will use native environment React Hooks for its cache data instead of Redux. Less files and less external plugins, the better. 
-Lays out the structure of the app. 
-Use Flow to make each variable to have strong type. 
+Demonstrate the layout and the structure of the app. 
+Use Flow to make each variable and function to have strong type. 
 Various tools are used to ensure code correctness such as ELint and etc.
  
 
 The style of the app is component based. 
 
 
-To see the read-to-show code example, go to:
+To see the ready-to-show code examples, go to:
 
 ReactNativeCRMApp/src/screens/sale/ReportSales
 
