@@ -1,5 +1,4 @@
 import React from "react";
-//import { SafeAreaView } from "react-navigation";
 import { Auth } from "aws-amplify";
 import {
   Alert,
@@ -76,9 +75,8 @@ class SignInScreen extends React.Component {
 
         this.props.navigation.navigate('App');
       });
-      //goHome();
     } catch (err) {
-      //console.log("error:", err);
+
 
       this._simpleAlertHandler(err);
     }
@@ -99,8 +97,6 @@ class SignInScreen extends React.Component {
 
     this.props.navigation.navigate('SignUp');
   };
-
-  //<Button title="Sign in!" onPress={this._signInAsync} />
 
   render() {
     return (
@@ -128,11 +124,6 @@ class SignInScreen extends React.Component {
       </SafeAreaView>
     );
   }
-
-  // _signInAsync = async () => {
-  //   await AsyncStorage.setItem("userToken", "abc");
-  //   this.props.navigation.navigate("App");
-  // };
 }
 
 const styles = StyleSheet.create({

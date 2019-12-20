@@ -65,33 +65,4 @@ class HomeScreen extends React.Component {
   };
 }
 
-// <Container>
-// <Header>
-//   <Left>
-//   <Button onPress={() => this.props.navigation.openDrawer()}>
-//   </Button>
-//   </Left>
-//   <Body>
-//     <Title>Card</Title>
-//   </Body>
-//   <Right />
-// </Header>
-//
-//
-// <Content>
-//     <Button onPress={this._showMoreApp}>
-//     <Text> "Show me more of the app" </Text>
-//     </Button>
-//
-//     <Button onPress={this._signOutAsync}>
-//     <Text> "Actually, sign me out :)" </Text>
-//     </Button>
-//   </Content>
-//
-// </Container>
-
-// <Button
-//   title="Actually, sign me out :)"
-//   onPress={this._signOutAsync}
-// />
 export default HomeScreen;

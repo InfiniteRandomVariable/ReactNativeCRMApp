@@ -42,12 +42,6 @@ type State = {
 };
 
 type InputItem = { type: string, strValue: string };
-// type ProductCode = { key: string };
-// type SalesPrice = { key: number };
-// type Cost = { key: number };
-// type Quantity = { key: number };
-// type RestockingReminder = { key: number };
-
 
 class CreateItemScreen extends React.PureComponent<Props, State> {
   static navigationOptions: NavigationStackScreenOption = ({ navigation }) =>
@@ -79,8 +73,6 @@ class CreateItemScreen extends React.PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    // const { navigation } = props;
-    // this.forSalesOnly = navigation.getParam("forSalesOnly", false);
     this.forSalesOnly = false;
     this.handleClick = this.handleClick.bind(this);
     this.handleClearClick = this.handleClearClick.bind(this);
@@ -159,24 +151,21 @@ class CreateItemScreen extends React.PureComponent<Props, State> {
       case 'Cost':
         if (helpers.isValidNumber(item.strValue)) {
           this.setState({ costValue: item.strValue });
-          //  this.props.navigation.setParams({cost: item.strValue});
         } else {
           this.setState({ costValue: '' });
-          //  this.props.navigation.setParams({cost: ""});
         }
 
         return;
       case 'ProductCode':
         helpers.consoleLog(`Updating Product Code: ${item.strValue}`);
         this.setState(() => ({ productCodeValue: item.strValue }));
-        //  this.props.navigation.setParams({productCode: item.strValue});
         return;
       case 'SalesPrice': {
         if (helpers.isValidNumber(item.strValue)) {
           this.setState(() => ({ salesPriceValue: item.strValue }));
         } else {
           this.setState({ salesPriceValue: '' });
-          //    this.props.navigation.setParams({salesPrice: ""});
+
         }
 
 
@@ -188,10 +177,9 @@ class CreateItemScreen extends React.PureComponent<Props, State> {
         if (helpers.isValidNumber(`${v}`) && v > 0) {
           this.setState({ quantityValue: `${v}` });
 
-          //  this.props.navigation.setParams({quantity: this.state.quantityValue});
         } else {
           this.setState({ quantityValue: '' });
-          //    this.props.navigation.setParams({quantity: ""});
+
         }
         return;
       }
@@ -199,10 +187,9 @@ class CreateItemScreen extends React.PureComponent<Props, State> {
         const rv: number = parseInt(item.strValue);
         if (helpers.isValidNumber(`${rv}`) && rv > 0) {
           this.setState({ restockingValue: `${rv}` });
-          //    this.props.navigation.setParams({restocking: this.state.restockingValue});
         } else {
           this.setState({ restockingValue: '' });
-          //    this.props.navigation.setParams({restocking: ""});
+
         }
 
         return;

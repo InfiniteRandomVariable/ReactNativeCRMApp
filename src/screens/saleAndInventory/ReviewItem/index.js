@@ -2,14 +2,6 @@
 // @flow
 
 import React from "react";
-// import {
-//   Image,
-//   ActivityIndicator,
-//   FlatList,
-//   StyleSheet,
-//   TouchableOpacity
-// } from "react-native";
-
 import {
   Content, Button, ListItem, Text, Separator,
 } from 'native-base';

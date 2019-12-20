@@ -12,7 +12,6 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-// import { NavigationState, NavigationScreenProp } from 'react-navigation';
 import {
   Container,
   Header,
@@ -32,11 +31,6 @@ type JSON = {
 
 type ListItemProps = { item: NameType, onPressItem: any, index: number};
 
-// type ListItemState = {
-//   selected: boolean
-// };
-//type JSONArray = {results:{ [key:string] : string }};
-//type ArrayHolderType =  {[key: string]: string} ;
 type Props = NavigationScreenProps & {};
 
 type NameType = {
@@ -57,9 +51,7 @@ type State = {
   error: null,
   value?: string
 };
-//type IndexType = { index: number};
 
-//NavigationScreenProp<NavigationState>
 
 class MyListItem extends React.Component<ListItemProps> {
   constructor(props: ListItemProps) {
@@ -74,17 +66,10 @@ class MyListItem extends React.Component<ListItemProps> {
       "Index: " + this.props.index + ", email:" + this.props.item.email
     );
 
-    // this.props.onPressItem = (item: NameType) => {
-    //   console.log("OnPressItem " + item.email);
-    // };
   }
 
   _onPress = () => {
-    // this.setState(state => {
-    //   return {
-    //     selected: !this.props.item.selected
-    //   };
-    // });
+
     console.log(
       "pressing this.props.item.email: " +
         this.props.item.email +
@@ -92,7 +77,7 @@ class MyListItem extends React.Component<ListItemProps> {
         this.props.index + " is selected: " +
         this.props.item.selected
     );
-    //this.forceUpdate();
+
     this.props.onPressItem(this.props.item, this.props.index);
   };
 
@@ -129,7 +114,6 @@ const listStyles = StyleSheet.create({
 });
 
 class AddItemScreen extends React.Component<Props, State> {
-  //var arrayholder : JSONArray= [];
    arrayholder : [];
 
   static navigationOptions: NavigationStackScreenOption = ({ navigation, navigationOptions }) => {
@@ -140,11 +124,6 @@ class AddItemScreen extends React.Component<Props, State> {
       headerLeft: (
         <DrawerTouchableOpacity onPress={() => navigation.openDrawer()} />
       )
-      /* These values are used instead of the shared configuration! */
-      // headerStyle: {
-      //   backgroundColor: navigationOptions.headerTintColor,
-      // },
-      // headerTintColor: navigationOptions.headerStyle.backgroundColor,
     };
   };
 
@@ -156,8 +135,6 @@ class AddItemScreen extends React.Component<Props, State> {
       data: [],
       error: null
     };
-
-    //this.props.arrayholder = [];
 
     this.arrayholder = [];
   }
@@ -174,17 +151,11 @@ class AddItemScreen extends React.Component<Props, State> {
     await fetch(url)
       .then(
         res =>
-          //  console.log("fetch 1 " + res.json());
 
           res.json()
-        // var myJSON = JSON.stringify(res.json());
-        // console.log("fetch 1.1 " + myJSON);
       )
       .then(responseJson => {
-        // var myJSON = JSON.stringify(responseJson);
-        // console.log("fetch 1.2 " + myJSON);
 
-        //  console.log("fetch 1.21 " + responseJson.title);
 
 
         const items = responseJson.results.map(function (item) {

@@ -12,7 +12,7 @@ Use Flow to make each variable and function to have strong type.
 Various tools are used to ensure code correctness such as ELint and etc.
  
 
-The style of the app is component based. 
+The style of the app is component based. We only use minimal external library. No React Native Expo, no react native elements, to ensure flexibility and performance. NativeBase is used for its strong support for sidebar navigation and faster performance.
 
 
 To see the ready-to-show code examples, go to:

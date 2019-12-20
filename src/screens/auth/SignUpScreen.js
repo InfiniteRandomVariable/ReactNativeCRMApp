@@ -1,5 +1,4 @@
 import React from "react";
-//import { SafeAreaView } from "react-navigation";
 import { Auth } from "aws-amplify";
 import {
   Alert,

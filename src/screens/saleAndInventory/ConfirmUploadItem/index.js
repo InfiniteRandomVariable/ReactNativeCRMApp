@@ -10,16 +10,6 @@ import DrawerTouchableOpacity from '../../../components/UI/DrawerTouchableOpacit
 
 type Props = NavigationScreenProps;
 
-// type ControllerType = {
-//   sales: string,
-//   inventory: string
-// };
-
-// type State = {
-//   controllerType: ControllerType
-// };
-
-
 class ConfirmUploadItemScreen extends React.Component<Props> {
   static navigationOptions: NavigationStackScreenOptions = ({ navigation }) => ({
     title: navigation.getParam('title', 'Confirmation'),

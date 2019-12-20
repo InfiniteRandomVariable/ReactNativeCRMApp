@@ -40,15 +40,8 @@ type State = {
   totalSalesPriceValue: string
 };
 type InputItem = { type: string, strValue: string };
-// type ProductCode = { key: string };
-// type SalesPrice = { key: number };
-// type Cost = { key: number };
-// type Quantity = { key: number };
-// type RestockingReminder = { key: number };
-
 class AddItemInventory extends React.Component<Props, State> {
   static navigationOptions: NavigationStackScreenOptions = ({ navigation }) =>
-  //  const { params } = navigation.state;
     ({
       title: navigation.getParam('title', 'Add Item'),
       headerLeft: (
@@ -70,7 +63,6 @@ class AddItemInventory extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    //  const { navigation } = props;
     this.baseState = {
       productCodeValue: '',
       costValue: '',
@@ -168,23 +160,8 @@ class AddItemInventory extends React.Component<Props, State> {
       title: theTitle,
       forSalesOnly: this.forSalesOnly,
     });
-
-
-    // this.state.productCodeValue = "";
   }
 
-  // isValidNumber = function(str: string): boolean {
-  //   var n = Number.parseFloat(str);
-  //   if (!str || isNaN(n) || n < 0) return false;
-  //   return true;
-  // };
-
-  // convertToDecimalNumber = function(value: string, toFixed: number): string {
-  //   var n = Number.parseFloat(value);
-  //   if (!helpers.isValidNumber(value)) return "";
-  //   return n.toFixed(toFixed);
-  //   //return 3;
-  // };
 
   updateStateValue = (item: InputItem) => {
     const thisState = this.state;
@@ -196,27 +173,27 @@ class AddItemInventory extends React.Component<Props, State> {
       case 'Cost':
         if (!isNaN(item.strValue)) {
           this.setState({ costValue: item.strValue });
-          //  this.props.navigation.setParams({cost: item.strValue});
+
         } else {
           this.setState({ costValue: '' });
-          //  this.props.navigation.setParams({cost: ""});
+
         }
 
         return;
       case 'ProductCode':
         this.setState({ productCodeValue: item.strValue });
-        //  this.props.navigation.setParams({productCode: item.strValue});
+
         return;
       case 'SalesPrice':
       {
         if (helpers.isValidNumber(item.strValue)) {
-        //  const thisState = this.state;
+
           const quantityValue = Number.parseFloat(thisState.quantityValue);
           const ppNum = helpers.convertToDecimalNumber(item.strValue, 2);
           const pNum = Number.parseFloat(ppNum);
           const totalSalesPrice = (pNum * quantityValue).toFixed(2);
           if (quantityValue > 0 && helpers.isValidNumber(`${totalSalesPrice}`)) {
-            // this.setState({ salesPriceValue: item.strValue });
+
             this.setState(() => ({
               salesPriceValue: item.strValue,
               totalSalesPriceValue: `${totalSalesPrice}`,
@@ -224,10 +201,10 @@ class AddItemInventory extends React.Component<Props, State> {
           } else {
             this.setState({ salesPriceValue: item.strValue });
           }
-          //    this.props.navigation.setParams({salesPrice: item.strValue});
+
         } else {
           this.setState({ salesPriceValue: '' });
-          //    this.props.navigation.setParams({salesPrice: ""});
+
         }
 
         return;
@@ -252,10 +229,10 @@ class AddItemInventory extends React.Component<Props, State> {
             this.setState({ quantityValue: `${v}` });
           }
 
-          //  this.props.navigation.setParams({quantity: this.state.quantityValue});
+
         } else {
           this.setState({ quantityValue: '' });
-          //    this.props.navigation.setParams({quantity: ""});
+
         }
         return; }
       case 'TotalSalesPrice':
@@ -274,10 +251,10 @@ class AddItemInventory extends React.Component<Props, State> {
             this.setState({ totalSalesPriceValue: item.strValue });
           }
 
-          //    this.props.navigation.setParams({salesPrice: item.strValue});
+
         } else {
           this.setState({ totalSalesPriceValue: '' });
-          //    this.props.navigation.setParams({salesPrice: ""});
+
         }
 
         return;

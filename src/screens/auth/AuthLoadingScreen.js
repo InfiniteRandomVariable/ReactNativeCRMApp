@@ -36,8 +36,6 @@ class AuthLoadingScreen extends React.Component {
 
     console.log("AuthLoadingScreen 2");
 
-    //this.props.navigation.navigate( 'Auth');
-    //this.props.navigation.navigate( 'App');
   };
 
   // Render any loading content that you like here
@@ -53,12 +51,5 @@ class AuthLoadingScreen extends React.Component {
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center"
-//   }
-// });
 
 export default AuthLoadingScreen;

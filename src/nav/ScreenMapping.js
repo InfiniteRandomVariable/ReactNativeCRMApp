@@ -1,5 +1,3 @@
-
-//import { evaluateChildDrawerTitle } from '../utilities/drawer';
 import AddItemScreen from "../screens/sale/addItem";
 
 export default {
